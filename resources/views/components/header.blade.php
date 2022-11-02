@@ -4,12 +4,13 @@
     <svg class="bi me-2" width="40" height="32">
     <use xlink:href="#bootstrap"></use>
     </svg>
-    <span class="fs-4" style="float: left;">Toko Buku </span>
+    <span class="fs-4" style="float: left;">{{Auth::user()->name ?? "Home Page"}}</span>
     </a>
     <ul class="nav nav-pills" style="float: right;">
         <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
         <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">FAQ</a></li>
         <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">About</a></li>
+        <li class="nav-item"><a href="{{ Auth::user() ? '/logout' : '/login'}}" class="nav-link active" aria-current="page">{{ Auth::user() ? 'Logout' : 'Login'}}</a></li>
     </ul>
 </header>
 </div>

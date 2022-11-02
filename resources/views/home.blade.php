@@ -1,7 +1,4 @@
 @extends('layouts.global')
-@section('Toko Buku')
-Ini Halaman Home
-@endsection
 @section('content')
     <div class="container px-4 py-5">
         <h2 class="pb-2 border-bottom">Daftar Buku</h2>
@@ -14,6 +11,7 @@ Ini Halaman Home
                     </div>
                     <h3 class="fs-2">{{ $tokobuku['jenis'] }}</h3>
                     <p>{{ $tokobuku['harga'] }}</p>
+                    <p>{{ $tokobuku['foto'] }}</p>
                 </div>
             @endforeach
         </div>
