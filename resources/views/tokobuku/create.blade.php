@@ -1,7 +1,4 @@
 @extends('layouts.global')
-@section('title')
-Create Mahasiswa
-@endsection
 @section('content')
 <div class="container">
 <form action="#" method="post">
@@ -13,6 +10,7 @@ Create Mahasiswa
 <div class="invalid-feedback">{{ $message }}</div>
 @enderror
 </div>
+
 <div class="mb-3">
 <label for="jenis" class="form-label">Jenis</label>
 <input type="text" class="form-control @error('jenis') is-invalid 
@@ -21,15 +19,19 @@ Create Mahasiswa
 <div class="invalid-feedback">{{ $message }}</div>
 @enderror
 </div>
+
 <div class="mb-3">
+    <label for="jenis" class="form-label">Harga</label>
+    <input type="text" class="form-control @error('harga') is-invalid 
+    @enderror" id="harga" name="harga" placeholder="harga" required>
+    @error('harga')
+    <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
-<label for="harga" class="form-label ">Harga</label>
-<select name="harga_id" id="harga_id" class="form-select 
-@error('harga_id') is-invalid @enderror"
-aria-label="Default select example">
-<option value="" selected>Pilih</option>
 
-@foreach ($bukus as $buku)
+
+@foreach ($tokobukus as $tokobuku)
 <option value={{ $buku->id }}>{{ $buku->id
 }}</option>
 @endforeach
@@ -38,7 +40,7 @@ aria-label="Default select example">
 <div class="invalid-feedback">{{ $message }}</div>
 @enderror
 </div>
-<div class="mb-3">
+<div class="mb-3 ml-3">
 <button type="submit" class="btn btn-success">Tambah</button>
 </div>
 </form>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Tokobuku;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class TokobukuController extends Controller
 {

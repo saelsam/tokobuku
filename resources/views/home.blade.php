@@ -5,13 +5,15 @@
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
             @foreach ($tokobukus as $tokobuku)
                 <div class="col" >
-                    <div class="d-inline-flex align-items-center 
-                    justify-content-center bg-gradient fs-2 mb-3">
+                    <div style="background-image: url('img/buku.png'); background-size: cover; height:400px">
+                        <div class="utama d-inline-flex align-items-center 
+                    justify-content-center bg-gradient fs-2 mb-3" >
                     <h1 class="fs-2" >{{ $tokobuku['nama'] }}</h1>
                     </div>
                     <h3 class="fs-2">{{ $tokobuku['jenis'] }}</h3>
                     <p>{{ $tokobuku['harga'] }}</p>
-                    <p>{{ $tokobuku['foto'] }}</p>
+                    </div>                   
+                    
                 </div>
             @endforeach
         </div>
